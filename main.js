@@ -5,9 +5,9 @@ const messagesContainer = document.getElementById("messages");
 let tracker = 0;
 
 const responses = [
-    "According to NWC's operations layer, there is an ongoing valve maintenance in your area. Water pressure is expected to normalize by <b>6 PM today</b>. You can view live service status <a href='#'>here</a>. Would you like to <a href='#'>file a report?</a>",
-    "The NRW rate in Jeddah currently stands at <b>22.6%</b>. Explore detailed breakdowns by pressure zone and DMA on the <a href='#'>NRW Analytics Dashboard</a>.",
-    "NWC is <b>currently upgrading</b> pipelines in your area. View project locations and timelines on the <a href='#'>Infrastructure Projects Map</a>.",
+    "<p>According to NWC's operations layer, there is an ongoing valve maintenance in your area. Water pressure is expected to normalize by <b>6 PM today</b>. You can view live service status <a href='#'>here</a>. Would you like to <a href='#'>file a report</a>?</p>",
+    "<p>The NRW rate in Jeddah currently stands at <b>22.6%</b>. Explore detailed breakdowns by pressure zone and DMA on the <a href='#'>NRW Analytics Dashboard</a>.</p><img src='images/dashboard.png' width='300' />",
+    "<p>NWC is <b>currently upgrading</b> pipelines in your area. View project locations and timelines on the <a href='#'>Infrastructure Projects Map</a>.</p>",
 ];
 
 function nextMessage() {
