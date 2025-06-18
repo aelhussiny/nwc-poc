@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>NWC Chatbot</title>
+        <script
+            type="module"
+            src="https://js.arcgis.com/calcite-components/3.2.1/calcite.esm.js"
+        ></script>
+        <style>
+            @font-face {
+                font-family: "CalciteWeb"; /* Choose a name for your font */
+                src: url("https://developers.arcgis.com/calcite-design-system/static/09ab0626-bb45-4650-acc8-0182d693df02-da35b5dac0012fb9049d14518d92b4bb.woff2")
+                    format("woff2");
+                /* You might also want to include other font formats for broader browser support, if available */
+                /* src: url('path/to/yourfont.woff') format('woff'),
+         url('path/to/yourfont.ttf') format('truetype'); */
+                font-weight: normal; /* Define the font weight (e.g., normal, bold, 400, 700) */
+                font-style: normal; /* Define the font style (e.g., normal, italic) */
+            }
+
+            .question,
+            .answer {
+                margin-top: 10px;
+                margin-bottom: 10px;
+                border-radius: 5px;
+                text-align: right;
+                background: #e9eef6;
+                padding: 5px 8px;
+                width: fit-content;
+                align-self: end;
+                max-width: 45%;
+            }
+
+            .answer {
+                align-self: start;
+                text-align: left;
+            }
+
+            .thinking {
+                font-size: smaller;
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+            }
+
+            .thinking span {
+                margin-left: 5px;
+            }
+
+            .ending {
+                text-align: center;
+                margin: 10px 0px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body
+        style="
+            font-family: 'CalciteWeb';
+            display: flex;
+            flex-direction: column;
+            min-height: calc(100vh - 20px);
+        "
+    >
+        <div
+            id="header"
+            style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: sticky;
+                top: 0;
+                left: 0;
+                background: white;
+                z-index: 1;
+                padding: 10px;
+                border-bottom: 1px solid #c6c6c6;
+            "
+        >
+            <img src="images/logo.png" width="300" />
+            <calcite-button
+                icon-start="search"
+                scale="l"
+                style="max-height: 45px"
+                >SEARCH ALL DATA</calcite-button
+            >
+        </div>
+        <div id="content" style="flex-grow: 1">
+            <div
+                id="titleinfo"
+                style="
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                "
+            >
+                <p
+                    style="
+                        font-size: var(--calcite-font-size-6);
+                        font-weight: 400;
+                        margin-bottom: 0px;
+                        text-align: center;
+                        line-height: 60px;
+                        margin-top: 35px;
+                    "
+                >
+                    ArcGIS Hub AI Assistant
+                </p>
+                <p style="text-align: center; margin-top: 0px">
+                    How can I help you? Ask about water services, projects, data
+                    and more
+                </p>
+            </div>
+            <div
+                id="cards"
+                style="
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    margin-top: 20px;
+                "
+            >
+                <calcite-card round="true">
+                    <img
+                        slot="thumbnail"
+                        alt="Sample image alt"
+                        src="images/outages.png"
+                        width="250"
+                        height="250"
+                    />
+                    <span slot="heading">Water Outages</span>
+                    <span slot="description"
+                        >View current interruptions in water supply</span
+                    >
+                </calcite-card>
+                <calcite-card>
+                    <img
+                        slot="thumbnail"
+                        alt="Sample image alt"
+                        src="images/infrastructure.png"
+                        width="250"
+                        height="250"
+                    />
+                    <span slot="heading">Infrastructure Projects</span>
+                    <span slot="description"
+                        >Explore recent and planned project locations</span
+                    >
+                </calcite-card>
+                <calcite-card>
+                    <img
+                        slot="thumbnail"
+                        alt="Sample image alt"
+                        src="images/consumption.png"
+                        width="250"
+                        height="250"
+                    />
+                    <span slot="heading">Water Consumption</span>
+                    <span slot="description"
+                        >Download water consumption statistics</span
+                    >
+                </calcite-card>
+            </div>
+            <div
+                id="messages"
+                style="display: flex; flex-direction: column; margin-top: 30px"
+            ></div>
+        </div>
+        <div
+            id="prompter"
+            style="
+                display: flex;
+                position: sticky;
+                bottom: 0;
+                left: 0;
+                background: white;
+                border-top: 1px solid #c6c6c6;
+                padding: 10px 0px;
+            "
+        >
+            <calcite-text-area
+                placeholder="Ask NWC Hub AI"
+                style="flex-grow: 1"
+                id="question"
+            ></calcite-text-area>
+            <calcite-button
+                style="margin-right: 10px"
+                icon-start="send"
+                id="send"
+            ></calcite-button>
+            <script src="main.js"></script>
+        </div>
+    </body>
+</html>
