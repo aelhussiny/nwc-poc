@@ -1,0 +1,10 @@
+{
+    "pressure": "<p>According to NWC's operations layer, there is an ongoing valve maintenance in your area. Water pressure is expected to normalize by <b>6 PM today</b>. You can view live service status <a href='#'>here</a>. Would you like to <a href='#'>file a report</a>?</p>",
+    "NRW": "<p>The NRW rate in Jeddah currently stands at <b>22.6%</b>. Explore detailed breakdowns by pressure zone and DMA on the <a href='#'>NRW Analytics Dashboard</a>.</p><img src='images/dashboard.png' width='300' />",
+    "construction": "<p>NWC is <b>currently upgrading</b> pipelines in your area. View project locations and timelines on the <a href='#'>Infrastructure Projects Map</a>.</p>",
+    "hi": "<p>Hello there. How can I help you today?</p>",
+    "hello": "<p>Hi there. How can I help you today?</p>",
+    "yes": "<p>Great!</p>",
+    "no": "<p>Well, that's weird!</p>",
+    "bye": "<p>See you next time!</p>"
+}

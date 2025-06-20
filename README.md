@@ -1,0 +1,16 @@
+# Features
+- Canned responses to specific keywords
+- Timestamps for each message
+- Half second delay before thinking to simulate network latency
+- Fake "thinking" between 1 and 6 seconds
+- Different thinking messages
+- Responds to hi and hello
+- If idle for 1 minute, checks if you're still there
+- Responds to yes and no
+- If idle for 2 minutes, ends the chat automatically
+- Responds to goodbye and ends the chat
+- If asked the same question more than once, mentions that it already stated the answer
+- Doesn't mention it already stated the answer for greetings and acknowledgements
+- Has a response to questions it doesn't know
+- If asked more than one thing it doesn't know, provides a different message acknowledging that
+- Help command

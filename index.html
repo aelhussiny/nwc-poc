@@ -23,7 +23,6 @@
             .question,
             .answer {
                 margin-top: 10px;
-                margin-bottom: 10px;
                 border-radius: 5px;
                 text-align: right;
                 background: #e9eef6;
@@ -36,6 +35,10 @@
             .answer {
                 align-self: start;
                 text-align: left;
+            }
+
+            .answer p {
+                margin: 0px;
             }
 
             .thinking {
@@ -53,6 +56,17 @@
                 text-align: center;
                 margin: 10px 0px;
                 font-weight: bold;
+                margin-bottom: 0px;
+            }
+
+            .time {
+                margin-top: 0px;
+                margin-bottom: 10px;
+                background: none;
+                font-size: 10px;
+                padding: 0px;
+                color: gray;
+                font-weight: normal;
             }
         </style>
     </head>
@@ -180,11 +194,13 @@
             "
         >
             <calcite-text-area
+                disabled="true"
                 placeholder="Ask NWC Hub AI"
                 style="flex-grow: 1"
                 id="question"
             ></calcite-text-area>
             <calcite-button
+                disabled="true"
                 style="margin-right: 10px"
                 icon-start="send"
                 id="send"
